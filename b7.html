@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr =[];
+    let N = +prompt("Nhap do dai cua mang:");
+    for (let i=0; i<N;i++){
+        arr[i] = +prompt("Nhap gia tri thu " +i);
+    }
+    let v = +prompt("Nhap so can kiem tra: ");
+    for (let i=0; i<N; i++){
+        if (v ==arr[i]){
+            document.write("Phan tu " +v+ " co trong mang");
+            break;
+        }
+        if (i == N-1) {
+            document.write("Phan tu do khong có trong mang");
+        }
+    }
+    let temp;
+    for (let i=0;i<N;i++){
+        if (v==arr[i]){
+            temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
+        }
+    }
+    document.write("<br>Neu phan tu có gia tri " +v+ " co trong mang, ta xoa phan tu có gia tri: "+v );
+    arr.pop();
+    document.write("<br>Mang moi nhu sau: "+arr);
+</script>
+</body>
+</html>

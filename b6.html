@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra phan tu co trong mang khong</title>
+</head>
+<body>
+<script>
+    let arr =[];
+    let N = +prompt("Nhap do dai cua mang:");
+    for (i=0; i<N;i++){
+        arr[i] = +prompt("Nhap gia tri thu " +i);
+    }
+    let v = +prompt("Nhap so can kiem tra: ");
+    for (i=0; i<N; i++){
+        if (v ==arr[i]){
+            alert("Phan tu " +v+ " co trong mang");
+            break;
+        }
+        if (i == N-1) {
+            alert("Phan tu do khong có trong mang");
+        }
+    }
+</script>
+</body>
+</html>

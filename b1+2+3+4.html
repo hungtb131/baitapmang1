@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập luyện tập mảng 1 2 3 4 khơi tạo mảng 10 số nguyên</title>
+</head>
+<body>
+<script>
+    let integer = [];
+
+    //bai-1
+    function input() {
+        let N = +prompt("Nhập số lượng số nguyên:");
+        for (let i = 0; i < N; i++) {
+            integer[i] = +prompt("Nhập giá trị thứ: " + i + ":");
+        }
+    }
+
+    function display() {
+        document.write("<br>Mảng vừa nhập là: ");
+        for (let i = 0; i < integer.length; i++) {
+            document.write(integer[i] + ", ");
+        }
+    }
+
+    function than10() {
+        document.write("<br> Các giá trị lớn hơn 10 la: ");
+        for (let i = 0; i < integer.length; i++) {
+            if (integer[i] > 10) {
+                document.write(integer[i] + ', ');
+            }
+        }
+    }
+
+    //bai-2
+    function findMax() {
+        let max = false;
+        if (integer.length > 0) {
+            max = integer[0];
+            for (let i = 1; i < integer.length; i++) {
+                if (integer[i] > max) {
+                    max = integer[i];
+                }
+            }
+        }
+        return max;
+    }
+
+    //bai-3
+    function sum() {
+        let s = 0;
+        for (i=0; i<integer.length;i++){
+            s = s +integer[i];
+        }
+        return s;
+    }
+    function avg() {
+        let s = 0;
+        for (i=0; i<integer.length;i++){
+            s = s +integer[i];
+        }
+        return s/integer.length;
+    }
+
+    function reverse() {
+        let start = 0;
+        let end = integer.length -1;
+        while (start<end){
+            let mid = integer[start];
+            integer[start] = integer [end];
+            integer[end] = mid;
+            start++;
+            end--;
+        }
+        document.write("<br>mang mới là: " +integer);
+    }
+    input();
+    display();
+    than10();
+    let maxvalue = findMax(integer);
+    document.write("<br>Gia tri lon nhat la: " + maxvalue);
+    findMax();
+    let sumvalue = sum(integer);
+    document.write("<br>tong cua cac gia tri là: " + sumvalue);
+    sum();
+    let avgvalue = avg(integer);
+    document.write("<br>Gia tri trung binh là: " + avgvalue);
+    avg();
+    reverse();
+</script>
+</body>
+</html>
